@@ -9,5 +9,11 @@
     state: restarted
     enabled: yes
 
+- name: Install boto3
+      pip:
+        name:
+          - boto3
+          - botocore
+
 - name: setup root password
   ansible.builtin.command: mysql_secure_installation --set-root-pass "{{ MYSQL_ROOT_PASSWORD }}"
